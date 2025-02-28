@@ -1,0 +1,16 @@
+# Ignore the Jekyll-generated _site/ folder
+_site/
+
+# Ignore Jekyll metadata
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ignore dependencies
+.bundle/
+vendor/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+node_modules/

@@ -1,0 +1,187 @@
+---
+layout: default
+title: "Contact Me"
+---
+
+<section class="hero">
+  <div class="container contact-container">
+    <div class="contact-info">
+      <h1>Get in Touch</h1>
+      <hr class="custom-hr">
+
+      <p>If you’d like to work together or have any inquiries, feel free to reach out!</p>
+      
+      <ul class="contact-details">
+        <li><strong>Email:</strong> your.email@example.com</li>
+        <li><strong>Phone:</strong> +123 456 7890</li>
+        <li><strong>Location:</strong> Nairobi, Kenya</li>
+      </ul>
+      
+      <div class="social-links">
+        <a href="#" class="social-icon">LinkedIn</a>
+        <a href="#" class="social-icon">GitHub</a>
+        <a href="#" class="social-icon">Twitter</a>
+      </div>
+    </div>
+    
+    <div class="contact-illustration">
+      <img src="/assets/images/contact-illustration.jpg" alt="Contact Illustration">
+    </div>
+  </div>
+</section>
+<section class="form">
+  <div class="container ">
+    <form action="https://formspree.io/f/xzzdnekp" method="POST" class="mt-5 ">
+      <h2>Lets chat</h2>
+      <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+      <div class="mb-3">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+      <div class="mb-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send Message</button>
+    </form>
+    
+  </div>
+
+ <div class="CTA">
+        <!-- Availability / Response Time -->
+        <h5 class="mt-0 mb-3 ">Availability</h5>
+        <p>I typically respond to inquiries within 24–48 hours. I am available for consultations on weekdays from 9 AM - 5 PM (EAT).</p>
+        
+        <!-- Call-to-Action -->
+        <h5>Let’s Talk!</h5>
+        <p>Need expert cybersecurity guidance or an ISO27001 consultation? Let’s secure your business together! Reach out today.</p>
+      </div>
+    </div>
+<style>
+  .hero{
+    background: linear-gradient(90deg,#3498db, orange);
+  }
+  .contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    height: 500px;
+  }
+  h1,h5{
+    color:orange;
+  }
+
+  .contact-info {
+    flex: 1;
+    max-width: 50%;
+    text-align: left;
+    color:black;
+  }
+
+  .contact-details {
+    list-style: none;
+    padding: 0;
+  }
+
+  .social-links {
+    margin-top: 20px;
+  }
+
+  .social-icon {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #1de9b6;
+    font-weight: bold;
+  }
+
+  .contact-illustration {
+    flex: 1;
+    max-width: 40%;
+  }
+
+  .contact-illustration img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  .CTA{
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+  }
+  .custom-hr {
+  width: 50%;
+  height: 5px;
+  background-color: black; /* Adjust to your theme color */
+  border: none;
+  margin-left: 2px;  /* Centers the line */
+}
+
+.contact-details li {
+    list-style: none;
+    font-size: 18px;
+    margin: 10px 0;
+  }
+
+  .contact-details a {
+    color: #ffeb3b;
+    text-decoration: none;
+  }
+
+  /* Form Styling */
+  .contact-form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 70%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  .btn-submit {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+</style>
+<script>
+  document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevents default form submission
+    const form = e.target;
+    
+    fetch(form.action, {
+      method: form.method,
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(response => {
+      if (response.ok) {
+        form.innerHTML = "<p class='success-message'>✅ Thank you! Your message has been sent.</p>";
+      } else {
+        form.innerHTML = "<p class='error-message'>❌ Oops! Something went wrong.</p>";
+      }
+    }).catch(error => {
+      form.innerHTML = "<p class='error-message'>❌ Error sending message.</p>";
+    });
+  });
+</script>

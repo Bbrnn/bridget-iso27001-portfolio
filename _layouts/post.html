@@ -1,0 +1,72 @@
+---
+layout: default
+---
+
+<section class="post-hero">
+  <div class="container">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">Published on {{ page.date | date: "%B %d, %Y" }} by {{ page.author | default: "Bridget Ngugi" }}</p>
+  </div>
+</section>
+
+<section class="post-content">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>
+
+<section class="post-navigation">
+  <div class="container">
+    {% if page.previous %}
+      <a href="{{ page.previous.url }}" class="prev-post">← Previous: {{ page.previous.title }}</a>
+    {% endif %}
+    
+    {% if page.next %}
+      <a href="{{ page.next.url }}" class="next-post">Next: {{ page.next.title }} →</a>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+/* Hero Section */
+.post-hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #3498db, #1abc9c); /* Electric blue and teal */
+  color: white;
+}
+
+.post-meta {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Post Content */
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  line-height: 1.8;
+  font-size: 18px;
+}
+
+/* Post Navigation */
+.post-navigation {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.prev-post, .next-post {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.prev-post:hover, .next-post:hover {
+  text-decoration: underline;
+}
+</style>

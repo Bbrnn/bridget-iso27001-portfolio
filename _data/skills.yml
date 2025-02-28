@@ -1,0 +1,10 @@
+skills:
+  - name: Cybersecurity
+    level: Expert
+  - name: Python
+    level: Advanced
+  - name: ISO27001 Compliance
+    level: Intermediate
+  - name: Web Development
+    level: Advanced
+

@@ -1,0 +1,11 @@
+- title: "Automated Security Scanner"
+  description: "A Python-based tool using OWASP ZAP and Docker for automated security scanning."
+  image: "/assets/images/security-scanner.png"
+  tech: "Python, OWASP ZAP, Docker"
+  link: "https://github.com/yourgithub/security-scanner"
+
+- title: "Secure E-Commerce Store"
+  description: "A secure shoe store with Django, MySQL, and Safaricom Daraja API for payments."
+  image: "/assets/images/shoe-store.png"
+  tech: "Django, MySQL, Bootstrap, Safaricom Daraja API"
+  link: "https://your-live-demo.com"
