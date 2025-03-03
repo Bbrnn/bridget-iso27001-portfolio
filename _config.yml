@@ -26,13 +26,22 @@ url: 'https://bbrnn.github.io/bridget-iso27001-portfolio/'
 #include:
 #  - _pages
 
-paginate: 5
-paginate_path: '/blog/page:num/'
+
+
 
 collections:
   pages:
     output: true
-    permalink: /:path
+    permalink: /:path/ 
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+paginate: 5
+paginate_path: "/blog/page:num"
+#paginate_path: "/bridget-iso27001-portfolio/blog/page:num/"
+
+  
 
 defaults:
   - scope:
@@ -65,3 +74,4 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
