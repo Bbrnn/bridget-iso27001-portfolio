@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% seo %}
   <title>{{ page.title }} | {{ site.title }}</title>
-  <link rel="stylesheet" href="{{ 'assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/assets/bootstrap/css/bootstrap.min.css">
 
 </head>
 <body data-theme="{{ site.theme | default: 'light' }}">
 
   {% include header.html %}
+  {% seo %}
+
   
   <main>
     {{ content }}

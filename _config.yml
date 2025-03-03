@@ -18,14 +18,16 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: "Bridget Ngugi | Cybersecurity & ISO27001 Consultant"
-author: "Bridget Ngugi"
-baseurl: ""
-url: "https://bbrnn.github.io/bridget-iso27001-portfolio/"
+title: 'Bridget Ngugi | Cybersecurity & ISO27001 Consultant'
+author: 'Bridget Ngugi'
+baseurl: '/bridget-iso27001-portfolio'
+url: 'https://bbrnn.github.io/bridget-iso27001-portfolio/'
 
-
+#include:
+#  - _pages
 
 paginate: 5
+paginate_path: '/blog/page:num/'
 
 collections:
   pages:
@@ -34,18 +36,16 @@ collections:
 
 defaults:
   - scope:
-      path: ""
-      type: "pages"
+      path: ''
+      type: 'pages'
     values:
-      layout: "default"
-
+      layout: 'default'
 
 plugins:
-  - jekyll-paginate
-
-
-
-
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-assets
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

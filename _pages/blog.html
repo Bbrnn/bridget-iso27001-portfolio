@@ -6,13 +6,24 @@ title: "Blog"
 <section class="blog">
   <div class="container">
     <h1>My Blog</h1>
-    {% for post in site.posts %}
-    <div class="blog-card">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p class="date">{{ post.date | date: "%B %d, %Y" }}</p>
-      <p>{{ post.excerpt }}</p>
-      <a href="{{ post.url }}" class="btn">Read More</a>
-    </div>
+
+    {% for post in paginator.posts %}
+      <div class="blog-card">
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p class="date">{{ post.date | date: "%B %d, %Y" }}</p>
+        <p>{{ post.excerpt }}</p>
+        <a href="{{ post.url | relative_url }}" class="btn">Read More</a>
+      </div>
     {% endfor %}
+
+    <!-- Pagination -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path | relative_url }}" class="btn">← Previous</a>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path | relative_url }}" class="btn">Next →</a>
+      {% endif %}
+    </div>
   </div>
 </section>
